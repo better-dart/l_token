@@ -11,6 +11,10 @@ import 'package:l_token/style/styles.dart';
 import 'package:l_token/view/token_item_widget.dart';
 import 'package:l_token/view/wallet_widget.dart';
 
+
+///
+///
+///
 class WalletPage extends StatelessWidget {
   static const String routeName = Routes.wallet + "/index";
 
@@ -138,6 +142,11 @@ class WalletPage extends StatelessWidget {
     HDWallet wallet = new HDWallet();
     wallet.address = "0xafb87869fd4132e8700e8678765cecd6b259cda8";
     wallet.name = "HDWallet";
+
+    ///
+    ///
+    ///
+    ///
     Widget currentWalletWidget = new WalletWidget(wallet: wallet,onMoreTap: (){
       Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
         return new SpecificWalletManagePage(wallet: wallet,);

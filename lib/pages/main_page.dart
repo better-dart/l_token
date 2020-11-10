@@ -61,8 +61,18 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin{
     return new Scaffold(
       body: new PageView(
         children: <Widget>[
+          ///
+          ///
           new MarketPage(),
+
+          ///
+          ///
+          ///
           new WalletPage(),
+
+          ///
+          ///
+          ///
           new ProfilePage()
         ],
         controller: pageController,

@@ -10,6 +10,9 @@ import 'package:l_token/view/password_inputfield.dart';
 import 'package:l_token/view/status_widget.dart';
 import 'package:http/http.dart' as http;
 
+///
+///
+///
 class WalletCreatePage extends StatefulWidget {
   static const String routeName = Routes.main + '/create';
 
@@ -85,10 +88,7 @@ class _WalletCreateState extends State<WalletCreatePage> {
                 style: new TextStyle(color: theme.primaryColor, fontSize: 24.0),
               ),
               new Container(
-                margin: EdgeInsets.only(
-                    left: Dimens.padding,
-                    right: Dimens.padding,
-                    top: Dimens.padding),
+                margin: EdgeInsets.only(left: Dimens.padding, right: Dimens.padding, top: Dimens.padding),
                 child: new Theme(
                   data: theme.copyWith(primaryColor: theme.dividerColor),
                   child: new TextFormField(
@@ -124,8 +124,7 @@ class _WalletCreateState extends State<WalletCreatePage> {
                 ),
               ),
               new Padding(
-                padding: EdgeInsets.only(
-                    top: 36.0, left: Dimens.padding, right: Dimens.padding),
+                padding: EdgeInsets.only(top: 36.0, left: Dimens.padding, right: Dimens.padding),
                 child: new RaisedButton(
                   onPressed: () {
                     final FormState form = _formKey.currentState;
@@ -156,27 +155,27 @@ class _WalletCreateState extends State<WalletCreatePage> {
     }
 
     return await showDialog<bool>(
-        context: context,
-        builder: (BuildContext context) {
-          return new AlertDialog(
-            title: const Text('This form has errors'),
-            content: const Text('Really leave this form?'),
-            actions: <Widget>[
-              new FlatButton(
-                child: const Text('YES'),
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-              ),
-              new FlatButton(
-                child: const Text('NO'),
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-              ),
-            ],
-          );
-        }) ??
+            context: context,
+            builder: (BuildContext context) {
+              return new AlertDialog(
+                title: const Text('This form has errors'),
+                content: const Text('Really leave this form?'),
+                actions: <Widget>[
+                  new FlatButton(
+                    child: const Text('YES'),
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                  ),
+                  new FlatButton(
+                    child: const Text('NO'),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                ],
+              );
+            }) ??
         false;
   }
 
@@ -189,17 +188,23 @@ class _WalletCreateState extends State<WalletCreatePage> {
     //todo 校验
     String password = _formData.password;
     String name = _formData.name;
-    print("before:${new DateTime.now()}\n");
+    print("debugX: create wallet: before:${new DateTime.now()}\n");
     new Future(() {
       return WalletInitializer.generateWallet(password: password, name: name);
-    }).then((wallet){
-      print("after:${new DateTime.now()}\n");
+    }).then((wallet) {
+      print("debugX: create wallet: after:${new DateTime.now()}\n");
+
+      new Future.delayed(Duration(milliseconds: 4000)).then((_) {
+        print("after:${new DateTime.now()}\n");
+      });
+      Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
+        return WalletCreateResultPage(wallet);
+      }));
     });
-//    new Future.delayed(Duration(milliseconds: 4000)).then((_) {
-//      print("after:${new DateTime.now()}\n");
-//    });
-//    Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
-//      return WalletCreateResultPage(wallet);
-//    }));
+
+    ///
+    ///
+    ///
+    ///
   }
 }

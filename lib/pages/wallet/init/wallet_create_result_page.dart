@@ -3,6 +3,11 @@ import 'package:l_token/model/wallet.dart';
 import 'package:l_token/pages/wallet/init/mnemonic_ensure_page.dart';
 import 'package:l_token/style/styles.dart';
 
+
+
+///
+/// 钱包创建成功页面:
+///
 class WalletCreateResultPage extends StatelessWidget {
   final HDWallet wallet;
 

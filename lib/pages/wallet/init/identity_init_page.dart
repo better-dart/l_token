@@ -4,6 +4,9 @@ import 'package:l_token/pages/routes/routes.dart';
 import 'package:l_token/pages/wallet/init/wallet_create_page.dart';
 import 'package:l_token/style/styles.dart';
 
+///
+///
+///
 class IdentityInitPage extends StatelessWidget {
   static const String routeName = Routes.main + '/init';
 
@@ -31,11 +34,7 @@ class IdentityInitPage extends StatelessWidget {
                   child: new Text(
                     'Create Your First Digital Identity\nEasy management of muti-chain wallets',
                     textAlign: TextAlign.center,
-                    style: new TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: 20.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal),
+                    style: new TextStyle(decoration: TextDecoration.none, fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.normal),
                   ),
                 ),
               ],
@@ -48,6 +47,10 @@ class IdentityInitPage extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: Dimens.padding * 2),
               child: new RaisedButton(
                 onPressed: () {
+                  ///
+                  ///
+                  ///
+                  ///
                   Navigator.of(context).pushNamed(WalletCreatePage.routeName);
                 },
                 color: Colors.blue,
@@ -60,21 +63,25 @@ class IdentityInitPage extends StatelessWidget {
             ),
           ),
           new Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: 12.0, horizontal: Dimens.padding * 2),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: Dimens.padding * 2),
             child: new Text(
               'Multi-chain wallets will be created automatically upon identity creation',
-              style: new TextStyle(
-                  decoration: TextDecoration.none,
-                  fontSize: 13.0,
-                  color: theme.hintColor,
-                  fontWeight: FontWeight.normal),
+              style: new TextStyle(decoration: TextDecoration.none, fontSize: 13.0, color: theme.hintColor, fontWeight: FontWeight.normal),
               textAlign: TextAlign.center,
             ),
           ),
+
+
+
+          ///
+          ///
+          ///
+          ///
+          ///
+          ///
+          ///
           new Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: 28.0, horizontal: Dimens.padding * 1.5),
+            padding: EdgeInsets.symmetric(vertical: 28.0, horizontal: Dimens.padding * 1.5),
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -83,11 +90,7 @@ class IdentityInitPage extends StatelessWidget {
                   height: Dimens.line,
                   color: theme.dividerColor,
                 ),
-                new Text('Or',
-                    style: new TextStyle(
-                        fontSize: 22.0,
-                        decoration: TextDecoration.none,
-                        color: theme.hintColor)),
+                new Text('Or', style: new TextStyle(fontSize: 22.0, decoration: TextDecoration.none, color: theme.hintColor)),
                 Container(
                   width: 100.0,
                   height: Dimens.line,
@@ -121,11 +124,7 @@ class IdentityInitPage extends StatelessWidget {
                   padding: EdgeInsets.only(left: 6.0),
                   child: new Text(
                     'lToken',
-                    style: new TextStyle(
-                        color: theme.primaryColor,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.none),
+                    style: new TextStyle(color: theme.primaryColor, fontSize: 20.0, fontWeight: FontWeight.normal, decoration: TextDecoration.none),
                   ),
                 )
               ],
@@ -135,8 +134,7 @@ class IdentityInitPage extends StatelessWidget {
       ),
     );
     return new SafeArea(
-      child: new Theme(
-          data: theme.copyWith(backgroundColor: Colors.white,brightness: Brightness.light), child: body),
+      child: new Theme(data: theme.copyWith(backgroundColor: Colors.white, brightness: Brightness.light), child: body),
       top: false,
       bottom: false,
     );
